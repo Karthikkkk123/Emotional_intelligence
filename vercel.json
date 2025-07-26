@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "emotion/server.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "emotion/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "landing/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/emotion/(.*)",
+      "dest": "emotion/server.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "landing/$1"
+    }
+  ]
+}
