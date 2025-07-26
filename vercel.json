@@ -8,15 +8,11 @@
     {
       "src": "emotion/**",
       "use": "@vercel/static"
-    },
-    {
-      "src": "landing/**",
-      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
-      "src": "/emotion/(.*)",
+      "src": "/(.*)",
       "dest": "emotion/server.py"
     },
     {
